@@ -1,0 +1,1 @@
+docker logs -f kevisong/hello-go-web:1.0.0

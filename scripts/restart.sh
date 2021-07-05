@@ -1,1 +1,2 @@
-# TODO
+sh ./stop
+sh ./start
