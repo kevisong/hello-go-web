@@ -26,7 +26,18 @@ var C Config
 
 // Check checks if config is valid
 func (c *Config) Check() error {
-	return c.Log.Check()
+
+	err := c.Server.Check()
+	if err != nil {
+		return err
+	}
+
+	err = c.Log.Check()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // ToString converts server config to string
