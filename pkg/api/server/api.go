@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/KEVISONG/hello-go-web/pkg/config/server"
+	"github.com/KEVISONG/hello-go-web/pkg/database"
 	"github.com/gin-gonic/gin"
 )
 
@@ -31,4 +32,10 @@ func Run(c server.Config) {
 
 	engine.Run(fmt.Sprintf(":%d", c.Port))
 
+}
+
+var db *database.Store
+
+func Init(d *database.Store) {
+	db = d
 }

@@ -17,4 +17,6 @@ require (
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e // indirect
 	gopkg.in/yaml.v2 v2.4.0
+	gorm.io/driver/mysql v1.1.1
+	gorm.io/gorm v1.21.11
 )
