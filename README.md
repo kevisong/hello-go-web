@@ -2,7 +2,7 @@
 
 Standard Go web project init template derived from [https://github.com/golang-standards/project-layout](https://github.com/golang-standards/project-layout)
 
-## Technology Selection
+## Dependency
 
 - Web Fromework: [https://github.com/gin-gonic/gin](https://github.com/gin-gonic/gin)
 - Configuration: [https://github.com/go-yaml/yaml](https://github.com/go-yaml/yaml)
