@@ -1,9 +1,12 @@
 version = 1.0.0
 
-all: build-server build-server-image save-server-image
+all: build-server build-web build-server-image save-server-image
 
 build-server:
 	GOOS=linux GOARCH=amd64 go build -o ./cmd/server/server ./cmd/server
+
+build-web:
+	statik -src=./web
 
 build-server-image:
 	docker build \

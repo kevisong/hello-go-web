@@ -3,13 +3,31 @@ package server
 import (
 	"fmt"
 	"net/http"
+	"os"
+
+	"github.com/rakyll/statik/fs"
+	"github.com/sirupsen/logrus"
+
+	_ "github.com/KEVISONG/hello-go-web/statik"
 
 	"github.com/KEVISONG/hello-go-web/pkg/config/server"
 	"github.com/KEVISONG/hello-go-web/pkg/database"
 	"github.com/gin-gonic/gin"
 )
 
+func serveStatik(e *gin.Engine) {
+	statikFS, err := fs.New()
+	if err != nil {
+		logrus.Error(err)
+		os.Exit(1)
+	}
+
+	e.StaticFS("/index", statikFS)
+}
+
 func route(e *gin.Engine) {
+
+	serveStatik(e)
 
 	e.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")

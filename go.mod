@@ -12,6 +12,7 @@ require (
 	github.com/onsi/ginkgo v1.16.4 // indirect
 	github.com/onsi/gomega v1.13.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/rakyll/statik v0.1.7
 	github.com/sirupsen/logrus v1.8.1
 	github.com/tietang/go-utils v0.1.3
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
