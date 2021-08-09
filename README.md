@@ -17,6 +17,5 @@ Other dependencies
 
 ## WIP
 
-- database
-- scripts
 - docs
+- config auto-generate
