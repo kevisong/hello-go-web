@@ -18,3 +18,6 @@ save-server-image:
 	docker save \
 	-o ./build/package/server/$(version).image \
 	kevisong/hello-go-web:$(version)
+
+push:
+ docker push kevisong/hello-go-web:$(version)
