@@ -20,4 +20,5 @@ save-server-image:
 	kevisong/hello-go-web:$(version)
 
 push:
- docker push kevisong/hello-go-web:$(version)
+	docker push \
+	kevisong/hello-go-web:$(version)
