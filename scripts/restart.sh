@@ -1,2 +1,0 @@
-sh ./stop
-sh ./start
