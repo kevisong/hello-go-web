@@ -6,6 +6,7 @@ all: build-server build-web build-server-image save-server-image
 build-server:
 	GOOS=linux GOARCH=amd64 go build -o ./cmd/server/server ./cmd/server
 
+# TODO: build-web should contain build web command
 .PHONY: build-web
 build-web:
 	statik -src=./web
