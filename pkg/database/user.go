@@ -13,3 +13,12 @@ func (s *Store) GetUserByID(id uint) (models.User, error) {
 	}
 	return user, nil
 }
+
+// PostUser PostUser
+func (s *Store) PostUser(u models.User) (id uint, err error) {
+	db := s.db.Create(&u)
+	if db.Error != nil {
+		return 0, db.Error
+	}
+	return u.ID, nil
+}

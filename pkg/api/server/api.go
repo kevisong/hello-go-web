@@ -35,6 +35,7 @@ func route(e *gin.Engine) {
 
 	v1 := e.Group("/api").Group("/v1")
 	v1.GET("/user/:id", userGet)
+	v1.POST("/user", userPost)
 
 }
 
