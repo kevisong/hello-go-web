@@ -55,6 +55,7 @@ func Run(c server.Config) {
 
 var db *database.Store
 
+// Init initialize the api server
 func Init(d *database.Store) {
 	db = d
 }

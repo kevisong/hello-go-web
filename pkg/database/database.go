@@ -6,6 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// Store defiens db storage
 type Store struct {
 	db *gorm.DB
 }
