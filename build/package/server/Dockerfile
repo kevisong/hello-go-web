@@ -1,6 +1,5 @@
 FROM alpine
 
-RUN mkdir -p /data/hello-go-web
 WORKDIR /data/hello-go-web
 ADD ./cmd/server/server .
 
