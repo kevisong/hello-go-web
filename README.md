@@ -19,3 +19,6 @@ Other dependencies
 
 - docs
 - config auto-generate
+- gRPC
+- gRPC-Gateway
+- Swagger
