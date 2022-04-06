@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/KEVISONG/hello-go-web/pkg/api/controller"
 	"github.com/KEVISONG/hello-go-web/pkg/api/debug"
 	"github.com/KEVISONG/hello-go-web/pkg/api/server"
 	"github.com/KEVISONG/hello-go-web/pkg/config"
@@ -47,7 +48,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	server.Init(store)
+	controller.Init(store)
 
 	go server.Run(config.C.Server)
 
