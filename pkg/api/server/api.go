@@ -10,8 +10,8 @@ import (
 
 	_ "github.com/KEVISONG/hello-go-web/statik"
 
+	"github.com/KEVISONG/hello-go-web/pkg/api/controller"
 	"github.com/KEVISONG/hello-go-web/pkg/config/server"
-	"github.com/KEVISONG/hello-go-web/pkg/database"
 	"github.com/gin-gonic/gin"
 )
 
@@ -34,8 +34,8 @@ func route(e *gin.Engine) {
 	})
 
 	v1 := e.Group("/api").Group("/v1")
-	v1.GET("/user/:id", userGet)
-	v1.POST("/user", userPost)
+	v1.GET("/user/:id", controller.UserGet)
+	v1.POST("/user", controller.UserPost)
 
 }
 
@@ -51,11 +51,4 @@ func Run(c server.Config) {
 
 	engine.Run(fmt.Sprintf(":%d", c.Port))
 
-}
-
-var db *database.Store
-
-// Init initialize the api server
-func Init(d *database.Store) {
-	db = d
 }

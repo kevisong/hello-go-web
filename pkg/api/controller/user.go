@@ -1,14 +1,15 @@
-package server
+package controller
 
 import (
 	"net/http"
 	"strconv"
 
+	"github.com/KEVISONG/hello-go-web/pkg/database"
 	"github.com/KEVISONG/hello-go-web/pkg/models"
 	"github.com/gin-gonic/gin"
 )
 
-func userGet(c *gin.Context) {
+func UserGet(c *gin.Context) {
 	id := c.Param("id")
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
@@ -23,7 +24,7 @@ func userGet(c *gin.Context) {
 	c.JSON(http.StatusOK, models.Response{Code: 0, Message: "success", Data: user})
 }
 
-func userPost(c *gin.Context) {
+func UserPost(c *gin.Context) {
 	user := models.User{}
 	err := c.BindJSON(&user)
 	if err != nil {
@@ -36,4 +37,11 @@ func userPost(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, models.Response{Code: 0, Message: "success", Data: id})
+}
+
+var db *database.Store
+
+// Init initialize the api server
+func Init(d *database.Store) {
+	db = d
 }
